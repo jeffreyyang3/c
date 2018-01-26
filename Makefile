@@ -1,7 +1,7 @@
 FLAGS = -std=c99 -Wall
-SOURCES = FileIO.c
-OBJECTS = FileIO.o
-EXEBIN = fileio
+SOURCES = FileIO2.c
+OBJECTS = FileIO2.o
+EXEBIN = lab3
 
 all: $(EXEBIN)
 
