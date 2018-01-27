@@ -24,9 +24,9 @@ int main(int argc, char* argv[]){
 	}
 /* read words from input file, print on separate lines to output file*/
 	while( fscanf(in, " %s", word) != EOF ){
-		char s[] = " %s";
+		char s[] = "asdf123";
 		int i = 0;
-		int j = strlen(" %s")-1;
+		int j = strlen(s)-1;
 		int temp;
 		while(i < j){
 			temp = s[i];
@@ -35,13 +35,12 @@ int main(int argc, char* argv[]){
 			i++;
 			j--;
 		}
-		for(i = 0; i<strlen(" %s"); i++){
+		for(i = 0;i < j; i++){
 			fprintf(out, "%c", s[i]);
 		}
 		fprintf(out, "\n");
 	}
-	
-	
+
 
 /* close input and output files */
 	fclose(in);
