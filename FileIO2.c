@@ -24,19 +24,18 @@ int main(int argc, char* argv[]){
 	}
 /* read words from input file, print on separate lines to output file*/
 	while( fscanf(in, " %s", word) != EOF ){
-		char s[] = "asdf123";
 		int i = 0;
-		int j = strlen(s)-1;
+		int j = strlen(word) - 1;
 		int temp;
 		while(i < j){
-			temp = s[i];
-			s[i] = s[j];
-			s[j] = temp;
+			temp = word[i];
+			word[i] = word[j];
+			word[j] = temp;
 			i++;
 			j--;
 		}
-		for(i = 0;i < j; i++){
-			fprintf(out, "%c", s[i]);
+		for(i = 0;i < strlen(word); i++){
+			fprintf(out, "%c", word[i]);
 		}
 		fprintf(out, "\n");
 	}
