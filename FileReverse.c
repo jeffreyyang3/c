@@ -1,6 +1,28 @@
+/*
+Jeffrey Yang
+1606512
+CMPS 12M
+2/2/2018
+Takes a file in, outputs the strings in that file to an output file in reverse
+
+*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+void stringReverse(char *s){
+    int i = 0;
+    int j = strlen(s) - 1;
+    int temp;
+    while(i < j){
+        temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+        i++;
+        j--;
+        
+    }
+
+}
 int main(int argc, char* argv[]){
 	FILE* in; /* file handle for input */
 	FILE* out; /* file handle for output */
@@ -23,21 +45,10 @@ int main(int argc, char* argv[]){
 		exit(EXIT_FAILURE);
 	}
 /* read words from input file, print on separate lines to output file*/
+    
 	while( fscanf(in, " %s", word) != EOF ){
-		int i = 0;
-		int j = strlen(word) - 1;
-		int temp;
-		while(i < j){
-			temp = word[i];
-			word[i] = word[j];
-			word[j] = temp;
-			i++;
-			j--;
-		}
-		for(i = 0;i < strlen(word); i++){
-			fprintf(out, "%c", word[i]);
-		}
-		fprintf(out, "\n");
+		stringReverse(word);
+        fprintf(out, "%s\n", word);
 	}
 
 
