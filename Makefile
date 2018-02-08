@@ -1,7 +1,7 @@
 FLAGS = -std=c99 -Wall
-SOURCES = FileReverse.c
-OBJECTS = FileReverse.o
-EXEBIN = FileReverse
+SOURCES = charType.c
+OBJECTS = charType.o
+EXEBIN = charType
 
 all: $(EXEBIN)
 
