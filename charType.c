@@ -2,6 +2,7 @@
 #include<ctype.h>
 #include<stdlib.h>
 #include<string.h>
+void extract_chars(char* s, char* a, char* d, char* p, char* w);
 int main(int argc, char* argv[]){
     FILE* in;
     in = fopen(argv[1], "r");
@@ -32,7 +33,7 @@ int main(int argc, char* argv[]){
       exit(EXIT_FAILURE);
    }
 
-   // open output file for writing   
+   // open output file for writing
    if((out=fopen(argv[2], "w")) == NULL){
       printf("Unable to write to file %s\n", argv[2]);
       exit(EXIT_FAILURE);
@@ -67,7 +68,7 @@ int main(int argc, char* argv[]){
 	    }
 	    linenumber++;
 	}
-				
+
     return EXIT_SUCCESS;
 }
 void extract_chars(char* s, char* a, char* d, char* p, char* w){
@@ -76,20 +77,20 @@ void extract_chars(char* s, char* a, char* d, char* p, char* w){
 	int pindex = 0;
 	int windex = 0;
 	for(int aa = 0; aa < strlen(s); aa++){
-		if(isalpha((int)s[i])){
-			a[aindex] = s[i];
+		if(isalpha((int)s[aa])){
+			a[aindex] = s[aa];
 			aindex++;
 		}
-		if(isdigit(int)s[i])){
-			d[dindex] = s[i];
+		if(isdigit((int)s[aa])){
+			d[dindex] = s[aa];
 			dindex++;
-		}	
-		if(ispunct(int)s[i])){
-			p[pindex] = s[i];
+		}
+		if(ispunct((int)s[aa])){
+			p[pindex] = s[aa];
 			pindex++;
 		}
-		if(isspace((int)s[i])){
-			w[windex] = s[i];
+		if(isspace((int)s[aa])){
+			w[windex] = s[aa];
 			windex++;
 		}
 	}
