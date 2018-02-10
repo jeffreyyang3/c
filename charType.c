@@ -3,25 +3,68 @@
 #include<stdlib.h>
 #include<string.h>
 int main(int argc, char* argv[]){
-    FILE* in;
-    FILE* out;
-
+    //FILE* in;
+    //FILE* out;
+    char* line;
+    line  = malloc(6969);
+    char* letters;
+    letters = malloc(6969);
+    char* numbers;
+    numbers = malloc(6969);
+    char* punctuation;
+    punctuation = malloc(6969);
+    char* spaces;
+    spaces = malloc(6969);
     char ch;
     int i,j, count;
-    if(argc > 1){
-        for(i = 1; i < argc; i++){
-            ch = argv[i][0];
-            count = j = 0;
-            while(ch != '\0'){
-                if(isalnum((int)ch)){
-                    count++;
-                }
-                ch = argv[i][++j];
-            }
-            printf("%s contains %d alphanumeric and ", argv[i],count);
-            printf("%d non-alphanumeric characters\n", strlen(argv[i])-count);
-        }
+    if(strlen(letters) != 1){
+	   fprintf(out, "%d alphabetic characters: %s \n", strlen(letters), letters);
     }
+    else{
+	   fprintf(out, "1 alphabetic character: %s \n", letters);
+    }
+    if(strlen(numbers) != 1){
+	    fprintf(out, "%d numeric characters: %s \n", strlen(numbers), numbers);
+    }
+    else{
+	    fprintf(out, "1 numeric character: %s \n", numbers);
+    }
+    if(strlen(punctuation) != 1){
+	    fprintf(out, "%d punctuation characters: %s \n", strlen(punctuation), punctuation);
+    }
+    else{
+	    fprintf(out, "1 punctuation character: %s \n", punctuation);
+    }
+    if(strlen(spaces) != 1){
+	    fprintf(out, "%d punctuation characters: %s \n", strlen(spaces), spaces);
+    }
+    else{
+	    fprintf(out, "1 punctuation character: %s \n", spaces);
+    }
+				
     return EXIT_SUCCESS;
 }
-
+void extract_chars(char* s, char* a, char* d, char* p, char* w){
+	int aindex = 0;
+	int dindex = 0;
+	int pindex = 0;
+	int windex = 0;
+	for(int aa = 0; aa < strlen(s); aa++){
+		if(isalpha((int)s[i])){
+			a[aindex] = s[i];
+			aindex++;
+		}
+		if(isdigit(int)s[i])){
+			d[dindex] = s[i];
+			dindex++;
+		}	
+		if(ispunct(int)s[i])){
+			p[pindex] = s[i];
+			pindex++;
+		}
+		if(isspace((int)s[i])){
+			w[windex] = s[i];
+			windex++;
+		}
+	}
+}
