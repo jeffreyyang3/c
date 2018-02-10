@@ -18,8 +18,6 @@ int main(int argc, char* argv[]){
     punctuation = malloc(6969);
     char* spaces;
     spaces = malloc(6969);
-    char ch;
-    int i,j, count;
     int linenumber = 1;
     // check command line for correct number of arguments
    if(argc != 3){
@@ -61,10 +59,10 @@ int main(int argc, char* argv[]){
 		    fprintf(out, "1 punctuation character: %s \n", punctuation);
 	    }
 	    if(strlen(spaces) != 1){
-		    fprintf(out, "%d punctuation characters: %s \n", strlen(spaces), spaces);
+		    fprintf(out, "%d whitespace characters: %s \n", strlen(spaces), spaces);
 	    }
 	    else{
-		    fprintf(out, "1 punctuation character: %s \n", spaces);
+		    fprintf(out, "1 whitespace character: %s \n", spaces);
 	    }
 	    linenumber++;
 	}
