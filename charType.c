@@ -41,25 +41,25 @@ int main(int argc, char* argv[]){
     	fprintf(out, "line %d contains:\n", linenumber);
     	extract_chars(line, letters, numbers, punctuation,spaces);
 	    if(strlen(letters) != 1){
-		   fprintf(out, "%d alphabetic characters: %s \n", strlen(letters), letters);
+		   fprintf(out, "%zu alphabetic characters: %s \n", strlen(letters), letters);
 	    }
 	    else{
 		   fprintf(out, "1 alphabetic character: %s \n", letters);
 	    }
 	    if(strlen(numbers) != 1){
-		    fprintf(out, "%d numeric characters: %s \n", strlen(numbers), numbers);
+		    fprintf(out, "%zu numeric characters: %s \n", strlen(numbers), numbers);
 	    }
 	    else{
 		    fprintf(out, "1 numeric character: %s \n", numbers);
 	    }
 	    if(strlen(punctuation) != 1){
-		    fprintf(out, "%d punctuation characters: %s \n", strlen(punctuation), punctuation);
+		    fprintf(out, "%zu punctuation characters: %s \n", strlen(punctuation), punctuation);
 	    }
 	    else{
 		    fprintf(out, "1 punctuation character: %s \n", punctuation);
 	    }
 	    if(strlen(spaces) != 1){
-		    fprintf(out, "%d whitespace characters: %s \n", strlen(spaces), spaces);
+		    fprintf(out, "%zu whitespace characters: %s \n", strlen(spaces), spaces);
 	    }
 	    else{
 		    fprintf(out, "1 whitespace character: %s \n", spaces);
