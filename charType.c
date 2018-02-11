@@ -67,7 +67,21 @@ int main(int argc, char* argv[]){
 	    linenumber++;
 	}
 
+    free(line);
+    line = NULL;
+    free(letters);
+    letters = NULL;
+    free(numbers);
+    numbers = NULL;
+    free(punctuation);
+    punctuation = NULL;
+    free(spaces);
+    spaces = NULL;
+    fclose(in);
+    fclose(out);
     return EXIT_SUCCESS;
+
+
 }
 void extract_chars(char* s, char* a, char* d, char* p, char* w){
 	int aindex = 0;
