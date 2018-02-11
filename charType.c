@@ -92,4 +92,9 @@ void extract_chars(char* s, char* a, char* d, char* p, char* w){
 			windex++;
 		}
 	}
+	a[aindex] = '\0';
+	d[dindex] = '\0';
+	p[pindex] = '\0';
+	w[windex] = '\0';
+
 }
