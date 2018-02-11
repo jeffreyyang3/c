@@ -26,18 +26,18 @@ int main(int argc, char* argv[]){
    }
 
    // open input file for reading
-   if((in=fopen(argv[1], "r")) == NULL){
+   if(in == NULL){
       printf("Unable to read from %s\n", argv[1]);
       exit(EXIT_FAILURE);
    }
 
    // open output file for writing
-   if((out=fopen(argv[2], "w")) == NULL){
+   if(out == NULL){
       printf("Unable to write to file %s\n", argv[2]);
       exit(EXIT_FAILURE);
    }
 
-    while(fgets(line, 696, in) != NULL){
+    while(fgets(line, 6969, in) != NULL){
     	fprintf(out, "line %d contains:\n", linenumber);
     	extract_chars(line, letters, numbers, punctuation,spaces);
 	    if(strlen(letters) != 1){

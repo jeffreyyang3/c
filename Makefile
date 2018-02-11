@@ -14,3 +14,5 @@ $(OBJECTS) : $(SOURCES)
 clean :
 	rm -f $(EXEBIN) $(OBJECTS)
 
+check :
+	valgrind --leak-check=full charType charType.c outfile
