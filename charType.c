@@ -1,3 +1,10 @@
+//Jeffrey Yang
+//1606512
+//CMPS 12M
+//2/11/2018
+//reads lines from an input file, and analyzes the content of each line
+//charType.c
+
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
@@ -9,6 +16,7 @@ int main(int argc, char* argv[]){
     FILE* out;
     out = fopen(argv[2], "w");
     char* line;
+    //advanced efficient memory allocation
     line  = malloc(6969);
     char* letters;
     letters = malloc(6969);
@@ -38,6 +46,7 @@ int main(int argc, char* argv[]){
    }
 
     while(fgets(line, 6969, in) != NULL){
+    	//zu used because d gave a warning
     	fprintf(out, "line %d contains:\n", linenumber);
     	extract_chars(line, letters, numbers, punctuation,spaces);
 	    if(strlen(letters) != 1){
@@ -66,6 +75,7 @@ int main(int argc, char* argv[]){
 	    }
 	    linenumber++;
 	}
+	//memory management
 
     free(line);
     line = NULL;
@@ -88,7 +98,7 @@ void extract_chars(char* s, char* a, char* d, char* p, char* w){
 	int dindex = 0;
 	int pindex = 0;
 	int windex = 0;
-	for(int aa = 0; aa < strlen(s); aa++){
+	for(int aa = 0; aa < strlen(s); aa++){ //fills each array with correct type from
 		if(isalpha((int)s[aa])){
 			a[aindex] = s[aa];
 			aindex++;
