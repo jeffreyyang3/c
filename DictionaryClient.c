@@ -22,7 +22,9 @@ int main(int argc, char* argv[]){
       insert(A, word1[i], word2[i]);
    }
 
+
    printDictionary(stdout, A);
+
 
    for(i=0; i<7; i++){
       k = word1[i];
@@ -30,12 +32,13 @@ int main(int argc, char* argv[]){
       printf("key=\"%s\" %s\"%s\"\n", k, (v==NULL?"not found ":"value="), v);
    }
 
+
+
    // insert(A, "five", "glow"); // error: key collision
 
    delete(A, "one");
    delete(A, "three");
    delete(A, "seven");
-
    printDictionary(stdout, A);
 
    for(i=0; i<7; i++){
@@ -55,4 +58,3 @@ int main(int argc, char* argv[]){
 
    return(EXIT_SUCCESS);
 }
-

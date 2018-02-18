@@ -58,16 +58,18 @@ int isEmpty(Dictionary D){
 }
 
 char* lookup(Dictionary D, char* k){
-	Node N = D->head;
-	while(N != NULL){
-		if(strcmp(N -> key, k) == 0){
-			return N -> value;
-		}
-		else{
-			N = N->next;
-		}
-	}
-	return NULL;
+       Node N = D->head;
+       if( D == NULL ){
+         fprintf(stderr, "Dictionary Error: calling lookup() on NULL Dictionary\n");
+         exit(EXIT_FAILURE);
+       }
+       while(N != NULL){
+         if(strcmp(N->key,k) == 0){
+            return N->value;
+				 }
+        		N = N->next;
+       }
+       return NULL;
 }
 
 void insert(Dictionary D, char* k, char* v){
@@ -106,6 +108,9 @@ void delete(Dictionary D, char* k){
 	}
 	if(D -> numItems == 1){
 		makeEmpty(D);
+	}
+	if(strcmp(D->head->key, k) == 0){
+		D->head = D ->head->next;
 	}
 	else{
 		Node temp = D -> head;
