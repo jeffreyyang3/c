@@ -66,8 +66,8 @@ char* lookup(Dictionary D, char* k){
        while(N != NULL){
          if(strcmp(N->key,k) == 0){
             return N->value;
-				 }
-        		N = N->next;
+		}
+        	N = N->next;
        }
        return NULL;
 }
@@ -95,7 +95,7 @@ void printDictionary(FILE* out, Dictionary D){
 	for(int i = 0; i < D->numItems; i++){
 		fprintf(out, "%s %s \n", temp->key, temp->value);
 		temp = temp->next;
-	}
+	} //
 }
 void makeEmpty(Dictionary D){
 	D->head = NULL;
@@ -111,6 +111,7 @@ void delete(Dictionary D, char* k){
 	}
 	if(strcmp(D->head->key, k) == 0){
 		D->head = D ->head->next;
+		D->numItems--;
 	}
 	else{
 		Node temp = D -> head;
