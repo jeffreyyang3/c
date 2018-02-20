@@ -110,16 +110,22 @@ void delete(Dictionary D, char* k){
 		makeEmpty(D);
 	}
 	if(strcmp(D->head->key, k) == 0){
+		Node temp = D->head;
 		D->head = D ->head->next;
+		freeNode(&temp);
 		D->numItems--;
 	}
 	else{
 		Node temp = D -> head;
+
 		while(strcmp(temp->next-> key, k) != 0){
 			temp = temp->next;
 		}
+		Node temp1 = temp->next;
 		temp->next = temp->next->next;
 		D->numItems--;
+		freeNode(&temp1);
+
 	}
 }
 Dictionary newDictionary(){
