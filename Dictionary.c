@@ -40,13 +40,7 @@ void freeNode(Node* pN){
 	}
 }
 
-void freeDictionary(Dictionary* pD){
-	if(pD != NULL && *pD != NULL){
-		makeEmpty(*pD);
-		free(*pD);
-		*pD = NULL;
-	}
-}
+
 
 int isEmpty(Dictionary D){
 	if(D -> numItems == 0){
@@ -98,8 +92,13 @@ void printDictionary(FILE* out, Dictionary D){
 	} //
 }
 void makeEmpty(Dictionary D){
-	D->head = NULL;
-	D -> numItems = 0;
+	while(D->numItems > 0){
+      Node temp = D->head;
+      D->head = temp->next;
+      D->numItems--;
+      freeNode(&temp);
+      
+   }
 }
 void delete(Dictionary D, char* k){
 	if(lookup(D,k) == NULL){
@@ -126,6 +125,13 @@ void delete(Dictionary D, char* k){
 		D->numItems--;
 		freeNode(&temp1);
 
+	}
+}
+void freeDictionary(Dictionary* pD){
+	if(pD != NULL && *pD != NULL){
+		makeEmpty(*pD);
+		free(*pD);
+		*pD = NULL;
 	}
 }
 Dictionary newDictionary(){
