@@ -89,7 +89,7 @@ void makeEmpty(Dictionary D){
      exit(EXIT_FAILURE);
   }
   for(int i = 0; i < tableSize; i++){
-          while(D->numItems > 0){
+          while(D->ht[i] != NULL){
            Node temp = D->ht[i];
            D->ht[i] = temp->next;
            D->numItems--;
