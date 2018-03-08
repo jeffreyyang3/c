@@ -2,10 +2,11 @@
 # Makefile for DictionaryClient.c with macros
 #------------------------------------------------------------------------------
 
-FLAGS   = -std=c99 -Wall
-SOURCES = HashDemo.c
-OBJECTS = HashDemo.o
-EXEBIN  = HashDemo
+ADT     = Dictionary
+EXEBIN  = $(ADT)Client
+SOURCES = $(ADT).c $(EXEBIN).c
+OBJECTS = $(ADT).o $(EXEBIN).o
+HEADERS = $(ADT).h
 
 all: $(EXEBIN)
 
@@ -20,3 +21,4 @@ clean :
 
 check:
 	valgrind --leak-check=full $(EXEBIN) 
+

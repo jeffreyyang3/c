@@ -6,4 +6,7 @@ ID 1606512
 Files submitted:
 README
 Makefile
-charType.c
+Dictionary.c
+DictionaryTest.c
+Dictionary.h
+DictionaryClient.c
